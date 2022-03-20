@@ -1,0 +1,136 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h1 style="color: aliceblue">Micro Work</h1>
+    <div class="d-flex">
+      <button
+        type="button"
+        (click)="showAdd()"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        class="btn btn-success"
+      >
+        Add User
+      </button>
+    </div>
+  </div>
+</nav>
+<table class="table">
+  <thead>
+    <tr>
+        <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Country</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of userData">
+      <td>{{ data.id }}</td>
+      <td>{{ data.firstName }}</td>
+      <td>{{ data.lastName}}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ data.address}}</td>
+      <td>{{ data.country }}</td>
+      <div class="d-flex">
+        <button (click)="fillEdited(data)" data-bs-toggle="modal"
+        data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+        <button (click)="deleteUser(data)" class="btn btn-danger mx-3">Delete</button>
+      </div>
+    </tr>
+  </tbody>
+</table>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">User Form</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          
+            
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >First Name </label
+            >
+            <input
+              type="text"
+              formControlName="firstName"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Last Name </label
+            >
+            <input
+              type="text"
+              formControlName="lastName"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleEmail" class="form-label"
+              >Email </label
+            >
+            <input
+              type="email"
+              formControlName="email"
+              class="form-control"
+              id="exampleEmail"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleAddress" class="form-label"
+              >Address</label
+            >
+            <input
+              type="text"
+              formControlName="address"
+              class="form-control"
+              id="exampleAddress"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleCountry" class="form-label"
+              >Country </label
+            >
+            <input
+              type="text"
+              formControlName="country"
+              class="form-control"
+              id="exampleCountry"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" *ngIf="showAddButton" (click)="postUserDetails()" class="btn btn-primary">Add</button>
+        <button type="button" *ngIf="showUpdateButton" (click)="updateUser()" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>

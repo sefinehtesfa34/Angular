@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "sefineh",
+      "lastName": "Tesfa",
+      "email": "sefinehtesfa34@gmail.com",
+      "address": "Addis Ababa University",
+      "country": "Ethiopia"
+    },
+    {
+      "id": 2,
+      "firstName": "mezgebu",
+      "lastName": "Tesfa",
+      "email": "sefinehtesfa34@gmail.com",
+      "address": "Gish Abay,Bahir Dar",
+      "country": "Ethiopia"
+    },
+    {
+      "id": 3,
+      "firstName": "sefineh",
+      "lastName": "Tesfa",
+      "email": "sefinehtesfa34@gmail.com",
+      "address": "Addis Ababa",
+      "country": "Ethiopia"
+    },
+    {
+      "id": 5,
+      "firstName": "Temesgen",
+      "lastName": "Amlakie",
+      "email": "temesgen@gmail.com",
+      "address": "Bahir dar",
+      "country": "Ethiopia"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
